@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background-color: rgb(236, 237, 244);
+    color: rgb(45, 45, 45);
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    padding: 1.25rem;
+}
+
+main {
+    background-color: white;
+    border-radius: 10px;
+    max-width: 100%;
+    width: 40%;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(201, 201, 201, 0.2), 0 6px 20px 0 rgba(201, 201, 201, 0.19);
+}
+
+section {
+    padding: 1rem;
+}
+
+.button {
+    min-width: 5vw;
+    padding: 1rem;
+    font-size: 1.25rem;
+    color: white;
+    border-radius: 10px;
+    outline: none;
+    border: 0;
+}
+
+.button:hover {
+    cursor: pointer;
+    filter: brightness(120%);
+}
+
+.listContainer {
+    min-height: 60vh;
+}
+
+.listHeader {
+    border-bottom: 1px solid rgb(45, 45, 45);
+    padding-bottom: 1rem;
+}
+
+.listHeader h2 {
+    font-size: 3rem;
+}
+
+.item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.item input[type=checkbox] {
+    text-align: center;
+    width: 2vw;
+    height: 2vh;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+#itemForm, .listHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#itemText {
+    width: 80%;
+    border: 2px solid rgb(236, 237, 244);
+    border-radius: 10px;
+    font-size: 1.25rem;
+    padding: 1rem;
+    outline: none;
+}
+
+#addItem {
+    background-color: rgb(27, 90, 226);
+}
+
+#clearItems {
+    background-color: rgb(226, 27, 27);
+}
