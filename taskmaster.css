@@ -107,6 +107,7 @@ section {
     .button {
         font-size: 1rem;
         padding: 0.75rem;
+        min-width: 10vw;
     }
 
     .listHeader h2 {
