@@ -60,17 +60,19 @@ section {
 
 .item {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
+    flex-direction: flex-end;
     padding: 0.5rem 0;
 }
 
-.item input[type=checkbox] {
-    text-align: center;
-    width: 2vw;
-    height: 2vh;
+.item label {
+    margin-right: auto;
+    text-decoration: none;
+}
+
+.item i {
     cursor: pointer;
-    margin-right: 1rem;
+    margin: 0 0.5rem;
 }
 
 #itemForm, .listHeader {
@@ -94,4 +96,36 @@ section {
 
 #clearItems {
     background-color: rgb(226, 27, 27);
+}
+
+@media only screen and (max-width: 425px) {
+    main {
+        width: 80%;
+    }
+
+    .button {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+
+    .listHeader h2 {
+        font-size: 2rem;
+    }
+
+    #itemText {
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+    main {
+        width: 75%;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    main {
+        width: 50%;
+    }
 }
