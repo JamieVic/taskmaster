@@ -88,6 +88,7 @@ section {
     font-size: 1.25rem;
     padding: 1rem;
     outline: none;
+    box-shadow: none;
 }
 
 #addItem {
