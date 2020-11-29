@@ -14,6 +14,16 @@ document.addEventListener("readystatechange", function(event) {
     loadData();
 });
 
+// Save Local Data
+function saveData() {
+    localStorage.setItem("savedtasks", tasks.innerHTML);
+};
+
+// Load Local Data
+function loadData() {
+    tasks.innerHTML = localStorage.getItem("savedtasks");
+};
+
 // Clear Add Item Text Field
 function clearItemField() {
     item.value = "";
@@ -22,7 +32,7 @@ function clearItemField() {
 // Set Item Entry Focus
 function setFocus() {
     item.focus();
-}
+};
 
 // Add Items
 addButton.addEventListener("click", function() {
@@ -30,21 +40,47 @@ addButton.addEventListener("click", function() {
     if (itemTrim != "") {
         const itemDiv = document.createElement("div");
         itemDiv.className = "item";
-        const itemCheckbox = document.createElement("input");
-        itemCheckbox.type = "checkbox";
-        itemCheckbox.tabIndex = 0;
         const itemLabel = document.createElement("label");
         itemLabel.textContent = item.value;
-        itemDiv.appendChild(itemCheckbox);
+        const itemCheck = document.createElement("i");
+        itemCheck.className = "fas fa-check";
+        itemCheck.setAttribute("onclick", "strikeItem(this)");
+        itemCheck.style.color = "green";
+        itemCheck.title = "Completed";
+        const clearItem = document.createElement("i");
+        clearItem.className = "fas fa-times";
+        clearItem.setAttribute("onclick", "delItem(this)");
+        clearItem.style.color = "red";
+        clearItem.title = "Delete";
         itemDiv.appendChild(itemLabel);
+        itemDiv.appendChild(itemCheck);
+        itemDiv.appendChild(clearItem);
         tasks.appendChild(itemDiv);
         clearItemField();
         setFocus();
         saveData();
-    }
+    };
 });
 
-// Clear Items
+// Strike An Item
+function strikeItem(e) {
+    if (e.previousSibling.style.textDecoration != "line-through") {
+        e.previousSibling.style.textDecoration = "line-through";
+        e.previousSibling.style.color = "grey";
+    } else {
+        e.previousSibling.style.textDecoration = "none";
+        e.previousSibling.style.color = "rgb(45, 45, 45)";
+    };
+    saveData();
+};
+
+// Clear An Item
+function delItem(e) {
+    e.parentElement.remove();
+    saveData();
+};
+
+// Clear All Items
 clearButton.addEventListener("click", function() {
     if (tasks.firstChild != null) {
         const clearAlert = confirm("Are you sure you want to clear the list?");
@@ -54,14 +90,5 @@ clearButton.addEventListener("click", function() {
             };
         };
     };
+    saveData();
 });
-
-// Save Local Data
-function saveData() {
-    localStorage.setItem("savedtasks", tasks);
-};
-
-// Load Local Data
-function loadData() {
-    tasks.innerHTML = localStorage.getItem("savedtasks");
-}
