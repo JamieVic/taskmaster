@@ -36,11 +36,7 @@ function saveData() {
 // Load Local Data
 function loadData() {
     tasks.innerHTML = localStorage.getItem("savedtasks");
-    if (taskTitle.innerHTML == '') {
-        taskTitle.innerHTML = "New List";
-    } else {
-        taskTitle.innerHTML = localStorage.getItem("savedheading");
-    }
+    taskTitle.innerHTML = localStorage.getItem("savedheading");
 };
 
 // Clear Add Item Text Field
