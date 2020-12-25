@@ -11,19 +11,40 @@
     <script src="https://kit.fontawesome.com/cd280adb12.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div id="helpContainer">
+        <i class="fas fa-times" id="closeIcon"></i>
+        <div id="helpMenu">
+            <h2>How To Use</h2>
+            <p>Add a task by typing it in the Task field and clicking the plus button or pressing Enter on the keyboard.</p>
+            <p>Once you complete a task, click the green tick icon to indicate it's completed.</p>
+            <p>If a task was incorrectly entered, you can double-click it to edit or click the red cross next to the task to delete it.</p>
+            <p>To change the task list heading, click it and type in the new heading. Once you've typed in the new heading, hit Enter on the keyboard to save it.</p>
+        </div>
+    </div>
+    <header>
+        <h1>Task Master</h1>
+        <div id="headerElements">
+            <input type="text" id="taskSearchbar" placeholder="Search Tasks">
+            <i class="far fa-question-circle" id="helpIcon" title="Help" aria-label="Open help menu"></i>
+            <a href="mailto:jamie@jvsdevelopment.com?subject=Task Master Bug"><i class="fas fa-bug" id="bugIcon" title="Report Bug" aria-label="Report a bug"></i></a>
+        </div>
+    </header>
     <main>
+        <section class="listContainer">
+            <div class="listHeader">
+                <h2 id="taskHeading"></h2>
+                <form id="headingForm">
+                    <input type="text" id="headingEditor" autocomplete="off">
+                </form>
+                <button id="clearItems" class="button" title="Clear List" aria-label="Clear all items from list" tabindex="0"><i class="fas fa-times"></i></button>
+            </div>
+            <ul id="listItems"></ul>
+        </section>
         <section class="newItem">
             <form id="itemForm">
                 <input type="text" id="itemText" autocomplete="off" placeholder="Task" tabindex="0" />
-                <button id="addItem" class="button" title="Add Item" aria-label="Add item to list" tabindex="0">+</button>
+                <button id="addItem" class="button" title="Add Item" aria-label="Add item to list" tabindex="0"><i class="fas fa-plus"></i></button>
             </form>
-        </section>
-        <section class="listContainer">
-            <div class="listHeader">
-                <h2>Tasks</h2>
-                <button id="clearItems" class="button" title="Clear List" aria-label="Clear all items from list" tabindex="0">Clear</button>
-            </div>
-            <div id="listItems"></div>
         </section>
     </main>
     <script src="taskmaster.js"></script>
