@@ -10,34 +10,48 @@ html {
 }
 
 body {
-    background-color: rgb(236, 237, 244);
     color: rgb(45, 45, 45);
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;
-    padding: 1.25rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(27, 90, 226);
+    color: white;
+    width: 100%;
+    padding: 0.5rem 0;
+    position: fixed;
+}
+
+header h1 {
+    text-align: center;
 }
 
 main {
     background-color: white;
-    border-radius: 10px;
     max-width: 100%;
-    width: 40%;
+    width: 50%;
     margin: auto;
-    box-shadow: 0 4px 8px 0 rgba(201, 201, 201, 0.2), 0 6px 20px 0 rgba(201, 201, 201, 0.19);
+    padding-top: 4rem;
 }
 
 section {
     padding: 1rem;
 }
 
+li {
+    list-style-type: none;
+}
+
 .button {
-    min-width: 5vw;
-    padding: 1rem;
-    font-size: 1.25rem;
-    color: white;
-    border-radius: 10px;
+    font-size: 1.75rem;
     outline: none;
     border: 0;
+    background-color: white;
+    padding: 0;
 }
 
 .button:hover {
@@ -45,17 +59,13 @@ section {
     filter: brightness(120%);
 }
 
-.listContainer {
-    min-height: 60vh;
-}
-
 .listHeader {
-    border-bottom: 1px solid rgb(45, 45, 45);
-    padding-bottom: 1rem;
+    border-bottom: 1px solid rgb(179, 179, 179);
+    padding-bottom: 0.5rem;
 }
 
 .listHeader h2 {
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .item {
@@ -65,7 +75,7 @@ section {
     padding: 0.5rem 0;
 }
 
-.item label {
+.item li {
     margin-right: auto;
     text-decoration: none;
 }
@@ -75,28 +85,128 @@ section {
     margin: 0 0.5rem;
 }
 
+.listHeader {
+    justify-content: space-between;
+}
+
+.listHeader h2 {
+    cursor: pointer;
+}
+
 #itemForm, .listHeader {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+}
+
+#itemForm {
+    justify-content: space-evenly;
 }
 
 #itemText {
     width: 80%;
-    border: 2px solid rgb(236, 237, 244);
-    border-radius: 10px;
+    border-bottom: 2px solid rgb(236, 237, 244);
+    border-style: none none solid none;
     font-size: 1.25rem;
-    padding: 1rem;
+    padding-bottom: 0.5rem;
     outline: none;
     box-shadow: none;
 }
 
 #addItem {
-    background-color: rgb(27, 90, 226);
+    color: rgb(27, 90, 226);
 }
 
 #clearItems {
-    background-color: rgb(226, 27, 27);
+    color: rgb(226, 27, 27);
+}
+
+#headingEditor {
+    display: none;
+    outline: none;
+    border: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(45, 45, 45);
+}
+
+#headerElements {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#headerElements a {
+    color: white;
+    text-decoration: none;
+}
+
+#headerElements i {
+    font-size: 1.5rem;
+}
+
+#headerElements .far {
+    margin: 0 2rem;
+}
+
+#taskSearchbar {
+    background-color: rgb(27, 90, 226);
+    filter: brightness(80%);
+    color: white;
+    padding: 0.75rem;
+    border-radius: 10px;
+    border: 0;
+    outline: none;
+    font-size: 1rem;
+}
+
+#taskSearchbar::placeholder {
+    color: white;
+}
+
+#taskSearchbar::-ms-input-placeholder {
+    color: white;
+}
+
+#helpIcon, #bugIcon {
+    cursor: pointer;
+}
+
+#helpContainer {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+#helpContainer i {
+    float: right;
+    cursor: pointer;
+    color: grey;
+    font-size: 2rem;
+    margin: 1rem 1rem 0 0;
+}
+
+#helpMenu {
+    background-color: white;
+    width: 50%;
+    margin: 5rem auto 0 auto;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#helpMenu p {
+    padding: 1rem 0;
+}
+
+#listPlaceholder {
+    color: grey;
+    margin-top: 1rem;
+    text-align: center;
 }
 
 @media only screen and (max-width: 425px) {
@@ -104,10 +214,12 @@ section {
         width: 80%;
     }
 
+    h1 {
+        display: none;
+    }
+
     .button {
-        font-size: 1rem;
-        padding: 0.75rem;
-        min-width: 10vw;
+        font-size: 1.5rem;
     }
 
     .listHeader h2 {
