@@ -17,7 +17,7 @@ const placeHolder = document.createElement("p");
     placeHolder.innerHTML = "No tasks listed";
 
 // Prevent Form Submission, Load Local Storage
-document.addEventListener("readystatechange", function(event) {
+window.addEventListener("load", function(event) {
     if (event.target.readyState === "complete") {
         itemsForm.addEventListener("submit", function(event2) {
             event2.preventDefault();
