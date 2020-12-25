@@ -5,9 +5,17 @@ Task Master is a simple web project made with HTML, CSS and Javascript where use
 ## Features
 
 - Add and remove tasks
+- Edit tasks and task heading
 - Clear all tasks function
+- Filter tasks by keywords
 - Local storage
 
 ## How To Use
 
-Type your task into the text input at the top and press Enter or the blue Plus button to add a task. To clear the task list, press the red Clear button at the top of the list. To mark a completed task, click the green check next to the corresponding task. To remove a single task, click the red cross next to the corresponding task.
+Add a task by typing it in the Task field and clicking the plus button or pressing Enter on the keyboard.
+
+Once you complete a task, click the green tick icon to indicate it's completed.
+
+If a task was incorrectly entered, you can double-click it to edit or click the red cross next to the task to delete it.
+
+To change the task list heading, click it and type in the new heading. Once you've typed in the new heading, hit Enter on the keyboard to save it.
