@@ -36,8 +36,7 @@ function saveData() {
 // Load Local Data
 function loadData() {
     tasks.innerHTML = localStorage.getItem("savedtasks");
-    const taskTitle2 = taskTitle.innerHTML;
-    if (taskTitle2.length <= 0) {
+    if (localStorage.getItem("savedheading") == null) {
         taskTitle.innerHTML = "New List";
     } else {
         taskTitle.innerHTML = localStorage.getItem("savedheading");
